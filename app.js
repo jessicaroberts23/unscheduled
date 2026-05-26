@@ -2,14 +2,16 @@
 
 let selectedDriveHours = 3;
 let selectedWhen = 'weekend';
+let selectedVibes = new Set();
 let resultsVisible = false;
 let deferredInstallPrompt = null;
 
 /* ─── DOM ────────────────────────────────────────────────────────────────── */
 
-const driveSelector = document.getElementById('drive-selector');
-const whenSelector  = document.getElementById('when-selector');
-const showButton    = document.getElementById('show-button');
+const driveSelector  = document.getElementById('drive-selector');
+const vibeSelector   = document.getElementById('vibe-selector');
+const whenSelector   = document.getElementById('when-selector');
+const showButton     = document.getElementById('show-button');
 const resultsSection = document.getElementById('results');
 
 /* ─── Selectors ──────────────────────────────────────────────────────────── */
@@ -21,6 +23,19 @@ function initSelectors() {
     driveSelector.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
     pill.classList.add('active');
     selectedDriveHours = parseFloat(pill.dataset.value);
+    if (resultsVisible) renderResults();
+  });
+
+  vibeSelector.addEventListener('click', (e) => {
+    const pill = e.target.closest('.pill');
+    if (!pill) return;
+    const value = pill.dataset.value;
+    if (value === 'all') {
+      selectedVibes.clear();
+    } else {
+      selectedVibes.has(value) ? selectedVibes.delete(value) : selectedVibes.add(value);
+    }
+    syncVibePills();
     if (resultsVisible) renderResults();
   });
 
@@ -46,10 +61,25 @@ function initSelectors() {
   });
 }
 
+/* ─── Vibe Pills Sync ────────────────────────────────────────────────────── */
+
+function syncVibePills() {
+  vibeSelector.querySelectorAll('.pill').forEach(pill => {
+    const v = pill.dataset.value;
+    pill.classList.toggle('active',
+      v === 'all' ? selectedVibes.size === 0 : selectedVibes.has(v)
+    );
+  });
+}
+
 /* ─── Filter Logic ───────────────────────────────────────────────────────── */
 
 function getFilteredDestinations() {
-  return DESTINATIONS.filter(d => d.driveHours <= selectedDriveHours);
+  return DESTINATIONS.filter(d => {
+    if (d.driveHours > selectedDriveHours) return false;
+    if (selectedVibes.size === 0) return true;
+    return d.vibes.some(v => selectedVibes.has(v.toLowerCase()));
+  });
 }
 
 /* ─── Formatting ─────────────────────────────────────────────────────────── */

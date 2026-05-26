@@ -160,6 +160,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-wrap: wrap;
 }
 
+.pill-selector--scroll {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+
+.pill-selector--scroll::-webkit-scrollbar {
+  display: none;
+}
+
 .pill {
   padding: 8px 16px;
   border-radius: var(--radius-full);
@@ -191,6 +203,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .pill:active {
   transform: scale(0.97);
 }
+
+/* Vibe-specific active colors for the vibe filter row */
+#vibe-selector .pill.active[data-value="history"] { background: var(--history-ink); border-color: var(--history-ink); box-shadow: 0 2px 8px rgba(212, 160, 112, 0.35); }
+#vibe-selector .pill.active[data-value="nature"]  { background: var(--nature-ink);  border-color: var(--nature-ink);  box-shadow: 0 2px 8px rgba(122, 191, 138, 0.35); }
+#vibe-selector .pill.active[data-value="arts"]    { background: var(--arts-ink);    border-color: var(--arts-ink);    box-shadow: 0 2px 8px rgba(122, 175, 212, 0.35); }
+#vibe-selector .pill.active[data-value="food"]    { background: var(--food-ink);    border-color: var(--food-ink);    box-shadow: 0 2px 8px rgba(224, 176, 96,  0.35); }
+#vibe-selector .pill.active[data-value="music"]   { background: var(--music-ink);   border-color: var(--music-ink);   box-shadow: 0 2px 8px rgba(224, 128, 168, 0.35); }
+#vibe-selector .pill.active[data-value="quirky"]  { background: var(--quirky-ink);  border-color: var(--quirky-ink);  box-shadow: 0 2px 8px rgba(184, 136, 212, 0.35); }
 
 /* ─── CTA Button ─────────────────────────────────────────────────────────── */
 
