@@ -61,6 +61,15 @@ function initSelectors() {
   });
 }
 
+/* ─── Vibe Pills Build ───────────────────────────────────────────────────── */
+
+function buildVibePills() {
+  const vibes = [...new Set(DESTINATIONS.flatMap(d => d.vibes))].sort();
+  vibeSelector.innerHTML =
+    '<button class="pill active" data-value="all">All</button>' +
+    vibes.map(v => `<button class="pill" data-value="${v.toLowerCase()}">${v}</button>`).join('');
+}
+
 /* ─── Vibe Pills Sync ────────────────────────────────────────────────────── */
 
 function syncVibePills() {
@@ -257,6 +266,7 @@ function registerServiceWorker() {
 /* ─── Init ───────────────────────────────────────────────────────────────── */
 
 document.addEventListener('DOMContentLoaded', () => {
+  buildVibePills();
   initSelectors();
   initInstallPrompt();
   registerServiceWorker();

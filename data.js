@@ -66,7 +66,7 @@ const DESTINATIONS = [
     driveHours: 3,
     anchor: "Perry's Victory Monument",
     description: 'A Lake Erie island reached by ferry, with a 352-foot granite column, golf carts for rent, and zero agenda.',
-    vibes: ['Nature', 'History', 'Quirky'],
+    vibes: ['Nature', 'History', 'Quirky', 'Water'],
     photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Perry%27s_Victory_and_International_Peace_Memorial_%284663688070%29.jpg/960px-Perry%27s_Victory_and_International_Peace_Memorial_%284663688070%29.jpg',
   },
   {
@@ -96,7 +96,7 @@ const DESTINATIONS = [
     driveHours: 3.5,
     anchor: '450-Ft Sand Dunes over Lake Michigan',
     description: 'You climb a sand mountain, your legs give out, and the reward is a view of Lake Michigan that looks like the ocean.',
-    vibes: ['Nature', 'Quirky'],
+    vibes: ['Nature', 'Quirky', 'Water'],
     photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Dunes_and_fog_from_Platte_Point_%2895c5ad13-5f8a-4a59-838f-50b9a644648c%29.jpg/960px-Dunes_and_fog_from_Platte_Point_%2895c5ad13-5f8a-4a59-838f-50b9a644648c%29.jpg',
   },
   {
@@ -106,7 +106,7 @@ const DESTINATIONS = [
     driveHours: 4.5,
     anchor: 'A Car-Free Island Frozen in 1898',
     description: 'No cars allowed. Arrive by ferry, get around by horse or bike, and eat more fudge than you planned to.',
-    vibes: ['Nature', 'History', 'Quirky', 'Food'],
+    vibes: ['Nature', 'History', 'Quirky', 'Food', 'Water'],
     photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Mackinac_Island%27s_main_town%2C_looking_west._Transportation_on_the_island_is_by_horse%2C_bike%2C_or_foot..jpg/960px-Mackinac_Island%27s_main_town%2C_looking_west._Transportation_on_the_island_is_by_horse%2C_bike%2C_or_foot..jpg',
   },
   {

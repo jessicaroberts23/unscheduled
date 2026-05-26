@@ -27,6 +27,8 @@
   --food-fill: #2E2008;
   --music-ink: #E080A8;
   --music-fill: #2E0F1C;
+  --water-ink: #6BB8D4;
+  --water-fill: #0D2535;
 
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -211,6 +213,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 #vibe-selector .pill.active[data-value="food"]    { background: var(--food-ink);    border-color: var(--food-ink);    box-shadow: 0 2px 8px rgba(224, 176, 96,  0.35); }
 #vibe-selector .pill.active[data-value="music"]   { background: var(--music-ink);   border-color: var(--music-ink);   box-shadow: 0 2px 8px rgba(224, 128, 168, 0.35); }
 #vibe-selector .pill.active[data-value="quirky"]  { background: var(--quirky-ink);  border-color: var(--quirky-ink);  box-shadow: 0 2px 8px rgba(184, 136, 212, 0.35); }
+#vibe-selector .pill.active[data-value="water"]   { background: var(--water-ink);   border-color: var(--water-ink);   box-shadow: 0 2px 8px rgba(107, 184, 212, 0.35); }
 
 /* ─── CTA Button ─────────────────────────────────────────────────────────── */
 
@@ -493,6 +496,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .vibe-tag.vibe-arts    { background: var(--arts-fill);    color: var(--arts-ink); }
 .vibe-tag.vibe-food    { background: var(--food-fill);    color: var(--food-ink); }
 .vibe-tag.vibe-music   { background: var(--music-fill);   color: var(--music-ink); }
+.vibe-tag.vibe-water   { background: var(--water-fill);   color: var(--water-ink); }
 
 /* ─── Stay Button ────────────────────────────────────────────────────────── */
 
