@@ -79,9 +79,10 @@ function createCard(dest) {
     .join('');
 
   card.innerHTML = `
-    <div class="card-accent-bar"></div>
-    <div class="card-body">
-      <div class="card-header">
+    <div class="card-photo">
+      <img src="${dest.photo}" alt="${dest.name}, ${dest.state}" loading="lazy" decoding="async">
+      <div class="card-photo-gradient"></div>
+      <div class="card-photo-meta">
         <div>
           <h2 class="destination-name">${dest.name}</h2>
           <span class="destination-state">${dest.state}</span>
@@ -96,7 +97,9 @@ function createCard(dest) {
           <span class="drive-time">${formatDriveTime(dest.driveHours)}</span>
         </div>
       </div>
-
+    </div>
+    <div class="card-accent-bar"></div>
+    <div class="card-body">
       <div class="anchor-attraction">
         <span class="anchor-label">Built around</span>
         <span class="anchor-name">${dest.anchor}</span>
@@ -112,7 +115,7 @@ function createCard(dest) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Find a place to stay in ${dest.name}"
-        >Stay ↗</a>
+        >Find a stay ↗</a>
       </div>
     </div>
   `;

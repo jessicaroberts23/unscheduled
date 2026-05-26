@@ -1,32 +1,32 @@
 /* ─── Custom Properties ─────────────────────────────────────────────────── */
 
 :root {
-  --bg: #FAF8F3;
-  --surface: #FFFFFF;
-  --surface-tint: #FDF9F5;
-  --accent: #C25B2F;
-  --accent-dark: #9E3F1A;
-  --accent-light: #F5E6DC;
-  --accent-faint: #FBF0E9;
-  --text: #1C1208;
-  --text-secondary: #6B5B4E;
-  --text-muted: #9A8A7D;
-  --border: #E8E0D5;
-  --border-light: #F0EBE3;
+  --bg: #13100C;
+  --surface: #1E1812;
+  --surface-tint: #251E15;
+  --accent: #D96B3E;
+  --accent-dark: #C05730;
+  --accent-light: #3D2114;
+  --accent-faint: #291509;
+  --text: #F0E6D2;
+  --text-secondary: #BFA07E;
+  --text-muted: #7A6050;
+  --border: #2E2318;
+  --border-light: #221B11;
 
   /* Vibe tag system */
-  --history-ink: #8B5E3C;
-  --history-fill: #F5EBE0;
-  --nature-ink: #3A6645;
-  --nature-fill: #E6F0E8;
-  --quirky-ink: #7B4F8F;
-  --quirky-fill: #F0E8F5;
-  --arts-ink: #2D6B9E;
-  --arts-fill: #E3EFF8;
-  --food-ink: #B87C22;
-  --food-fill: #FBF0DC;
-  --music-ink: #B84B6F;
-  --music-fill: #F8E6ED;
+  --history-ink: #D4A070;
+  --history-fill: #2E1E0E;
+  --nature-ink: #7ABF8A;
+  --nature-fill: #112A17;
+  --quirky-ink: #B888D4;
+  --quirky-fill: #221329;
+  --arts-ink: #7AAFD4;
+  --arts-fill: #0F2035;
+  --food-ink: #E0B060;
+  --food-fill: #2E2008;
+  --music-ink: #E080A8;
+  --music-fill: #2E0F1C;
 
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -36,9 +36,9 @@
   --radius-lg: 18px;
   --radius-full: 100px;
 
-  --shadow-card: 0 2px 16px rgba(28, 18, 8, 0.07), 0 1px 4px rgba(28, 18, 8, 0.05);
-  --shadow-card-hover: 0 8px 32px rgba(28, 18, 8, 0.13), 0 2px 8px rgba(28, 18, 8, 0.07);
-  --shadow-button: 0 4px 16px rgba(194, 91, 47, 0.35);
+  --shadow-card: 0 2px 20px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 8px 40px rgba(0, 0, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-button: 0 4px 20px rgba(217, 107, 62, 0.5);
 
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition: 220ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -92,7 +92,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 120% 100% at 50% 0%, rgba(194, 91, 47, 0.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse 120% 80% at 50% 0%, rgba(217, 107, 62, 0.18) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -298,6 +298,93 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   box-shadow: var(--shadow-card-hover);
 }
 
+/* ─── Card Photo ─────────────────────────────────────────────────────────── */
+
+.card-photo {
+  position: relative;
+  height: 195px;
+  overflow: hidden;
+}
+
+.card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.destination-card:hover .card-photo img {
+  transform: scale(1.04);
+}
+
+.card-photo-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    transparent 75%
+  );
+}
+
+.card-photo-meta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px 14px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.destination-name {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.destination-state {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  display: block;
+  margin-top: 3px;
+}
+
+.drive-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-full);
+  padding: 5px 10px 5px 8px;
+  flex-shrink: 0;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.drive-icon {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1;
+  font-size: 0.875rem;
+}
+
+.drive-time {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+
 /* Accent bar color by primary vibe */
 .card-accent-bar {
   height: 3px;
@@ -312,58 +399,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .destination-card[data-primary-vibe="music"]   .card-accent-bar { background: var(--music-ink); }
 
 .card-body {
-  padding: 20px 20px 18px;
-}
-
-/* Card header row */
-.card-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.destination-name {
-  font-family: var(--font-display);
-  font-size: 1.375rem;
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--text);
-}
-
-.destination-state {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  display: block;
-  margin-top: 3px;
-}
-
-.drive-badge {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background: var(--accent-faint);
-  border: 1px solid var(--accent-light);
-  border-radius: var(--radius-full);
-  padding: 5px 10px 5px 8px;
-  flex-shrink: 0;
-}
-
-.drive-icon {
-  color: var(--accent);
-  line-height: 1;
-  font-size: 0.875rem;
-}
-
-.drive-time {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--accent-dark);
-  white-space: nowrap;
+  padding: 18px 20px 18px;
 }
 
 /* Anchor attraction callout */
@@ -585,8 +621,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--text);
-  color: #fff;
+  background: #0D0A07;
+  border-top: 1px solid var(--border);
+  color: var(--text);
   padding: 16px 20px;
   display: flex;
   align-items: center;

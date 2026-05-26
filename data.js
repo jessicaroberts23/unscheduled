@@ -7,6 +7,7 @@ const DESTINATIONS = [
     anchor: 'Indianapolis Motor Speedway',
     description: 'Racing history, a revived downtown, and some of the best food in the Midwest — all without the big-city chaos.',
     vibes: ['History', 'Arts', 'Food'],
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Indianapolis-1872529_1920_%28cropped%29.jpg/800px-Indianapolis-1872529_1920_%28cropped%29.jpg',
   },
   {
     id: 'cincinnati',
@@ -16,6 +17,7 @@ const DESTINATIONS = [
     anchor: 'Over-the-Rhine Historic District',
     description: 'Victorian row houses, craft breweries on every block, and Cincinnati chili — a city with a personality all its own.',
     vibes: ['History', 'Arts', 'Food'],
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Downtown_Cincinnati_viewed_from_Devou_Park_%28cropped%29.jpg/800px-Downtown_Cincinnati_viewed_from_Devou_Park_%28cropped%29.jpg',
   },
   {
     id: 'detroit',
@@ -25,6 +27,7 @@ const DESTINATIONS = [
     anchor: 'Motown Museum',
     description: "One of America's great comeback stories, with art, music, and food that punch well above their weight.",
     vibes: ['History', 'Arts', 'Music', 'Food'],
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Detroit_Skyline_from_Windsor_2025-09-01.jpg/800px-Detroit_Skyline_from_Windsor_2025-09-01.jpg',
   },
   {
     id: 'columbus',
@@ -34,6 +37,7 @@ const DESTINATIONS = [
     anchor: 'Short North Arts District',
     description: 'A walkable arts corridor, James Beard–worthy restaurants, and a college city that got unexpectedly cool.',
     vibes: ['Arts', 'Food', 'Quirky'],
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Downtown_Columbus_View_from_Main_St_Bridge_-_edit1.jpg/800px-Downtown_Columbus_View_from_Main_St_Bridge_-_edit1.jpg',
   },
   {
     id: 'chicago',
@@ -43,6 +47,7 @@ const DESTINATIONS = [
     anchor: 'Art Institute & Millennium Park',
     description: 'The full metropolis hit — world-class art, deep-dish pizza, lake views that feel bigger than they should.',
     vibes: ['Arts', 'Food', 'History'],
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Chicago_River_ferry_b.jpg/800px-Chicago_River_ferry_b.jpg',
   },
   {
     id: 'louisville',
@@ -52,6 +57,7 @@ const DESTINATIONS = [
     anchor: 'Churchill Downs & Bourbon Row',
     description: 'Horses, bourbon barrels, and a food scene that became a genuine destination without trying to.',
     vibes: ['History', 'Food', 'Quirky'],
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Louisville_Skyline_2021_%283%29.jpg/800px-Louisville_Skyline_2021_%283%29.jpg',
   },
   {
     id: 'put-in-bay',
@@ -61,6 +67,7 @@ const DESTINATIONS = [
     anchor: "Perry's Victory Monument",
     description: 'A Lake Erie island reached by ferry, with a 352-foot granite column, golf carts for rent, and zero agenda.',
     vibes: ['Nature', 'History', 'Quirky'],
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Perry%27s_Victory_and_International_Peace_Memorial_%284663688070%29.jpg/800px-Perry%27s_Victory_and_International_Peace_Memorial_%284663688070%29.jpg',
   },
   {
     id: 'cleveland',
@@ -70,6 +77,7 @@ const DESTINATIONS = [
     anchor: 'Rock & Roll Hall of Fame',
     description: 'Underrated in the best way — a waterfront city with a chip on its shoulder and a lot of surprises.',
     vibes: ['History', 'Arts', 'Music'],
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Cleveland_skyline_from_Lakewood_Park%2C_January_2026.jpg/800px-Cleveland_skyline_from_Lakewood_Park%2C_January_2026.jpg',
   },
   {
     id: 'galena',
@@ -79,6 +87,7 @@ const DESTINATIONS = [
     anchor: "Ulysses S. Grant's Hometown",
     description: "A perfectly preserved 1800s Main Street, antique shops that actually have good stuff, and rolling Illinois countryside.",
     vibes: ['History', 'Quirky', 'Arts'],
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Galena%2C_Illinois.jpg/800px-Galena%2C_Illinois.jpg',
   },
   {
     id: 'sleeping-bear-dunes',
@@ -88,6 +97,7 @@ const DESTINATIONS = [
     anchor: '450-Ft Sand Dunes over Lake Michigan',
     description: 'You climb a sand mountain, your legs give out, and the reward is a view of Lake Michigan that looks like the ocean.',
     vibes: ['Nature', 'Quirky'],
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Dunes_and_fog_from_Platte_Point_%2895c5ad13-5f8a-4a59-838f-50b9a644648c%29.jpg/800px-Dunes_and_fog_from_Platte_Point_%2895c5ad13-5f8a-4a59-838f-50b9a644648c%29.jpg',
   },
   {
     id: 'mackinac-island',
@@ -97,6 +107,7 @@ const DESTINATIONS = [
     anchor: 'A Car-Free Island Frozen in 1898',
     description: 'No cars allowed. Arrive by ferry, get around by horse or bike, and eat more fudge than you planned to.',
     vibes: ['Nature', 'History', 'Quirky', 'Food'],
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Mackinac_Island%27s_main_town%2C_looking_west._Transportation_on_the_island_is_by_horse%2C_bike%2C_or_foot..jpg/800px-Mackinac_Island%27s_main_town%2C_looking_west._Transportation_on_the_island_is_by_horse%2C_bike%2C_or_foot..jpg',
   },
   {
     id: 'nashville',
@@ -106,5 +117,6 @@ const DESTINATIONS = [
     anchor: 'Honky-Tonk Row on Broadway',
     description: 'Live music spilling out of every door, hot chicken that earns its reputation, and a city that never really sleeps.',
     vibes: ['Music', 'Food', 'Arts'],
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Nashville%2C_TN_skyline.jpg/800px-Nashville%2C_TN_skyline.jpg',
   },
 ];

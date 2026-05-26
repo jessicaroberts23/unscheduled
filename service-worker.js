@@ -1,4 +1,4 @@
-const CACHE_NAME = 'unscheduled-v1';
+const CACHE_NAME = 'unscheduled-v2';
 
 const APP_SHELL = [
   '/',
@@ -36,10 +36,11 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Skip non-GET and cross-origin requests (except Google Fonts)
+  // Skip non-GET and cross-origin requests (except Google Fonts + Wikimedia images)
   if (request.method !== 'GET') return;
   const isGoogleFonts = url.hostname.includes('fonts.g');
-  if (!isGoogleFonts && url.origin !== self.location.origin) return;
+  const isWikimedia = url.hostname.includes('wikimedia.org');
+  if (!isGoogleFonts && !isWikimedia && url.origin !== self.location.origin) return;
 
   event.respondWith(
     caches.match(request).then((cached) => {
