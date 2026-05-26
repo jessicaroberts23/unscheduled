@@ -64,7 +64,7 @@ function initSelectors() {
 /* ─── Vibe Pills Build ───────────────────────────────────────────────────── */
 
 function buildVibePills() {
-  const vibes = [...new Set(DESTINATIONS.flatMap(d => d.vibes))].sort();
+  const vibes = [...new Set(DESTINATIONS.flatMap(d => d.tags))].sort();
   vibeSelector.innerHTML =
     '<button class="pill active" data-value="all">All</button>' +
     vibes.map(v => `<button class="pill" data-value="${v.toLowerCase()}">${v}</button>`).join('');
@@ -87,7 +87,7 @@ function getFilteredDestinations() {
   return DESTINATIONS.filter(d => {
     if (d.driveHours > selectedDriveHours) return false;
     if (selectedVibes.size === 0) return true;
-    return d.vibes.some(v => selectedVibes.has(v.toLowerCase()));
+    return d.tags.some(v => selectedVibes.has(v.toLowerCase()));
   });
 }
 
@@ -111,9 +111,9 @@ function buildBookingUrl(dest) {
 function createCard(dest) {
   const card = document.createElement('article');
   card.className = 'destination-card';
-  card.setAttribute('data-primary-vibe', dest.vibes[0].toLowerCase());
+  card.setAttribute('data-primary-vibe', dest.tags[0].toLowerCase());
 
-  const vibeTagsHTML = dest.vibes
+  const vibeTagsHTML = dest.tags
     .map(v => `<span class="vibe-tag vibe-${v.toLowerCase()}">${v}</span>`)
     .join('');
 
@@ -141,16 +141,16 @@ function createCard(dest) {
     <div class="card-body">
       <div class="anchor-attraction">
         <span class="anchor-label">Built around</span>
-        <span class="anchor-name">${dest.anchor}</span>
+        <span class="anchor-name">${dest.anchor_name}</span>
       </div>
 
-      <p class="destination-description">${dest.description}</p>
+      <p class="destination-description">${dest.hook}</p>
 
       <div class="card-footer">
         <div class="vibe-tags" aria-label="Vibes">${vibeTagsHTML}</div>
         <a
           class="stay-button"
-          href="${buildBookingUrl(dest)}"
+          href="${dest.booking_search_url || buildBookingUrl(dest)}"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Find a place to stay in ${dest.name}"
