@@ -154,6 +154,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--text-muted);
 }
 
+/* ─── Vibe Row ───────────────────────────────────────────────────────────── */
+
+.vibe-row {
+  padding: 0 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 /* ─── Pill Selector ──────────────────────────────────────────────────────── */
 
 .pill-selector {
@@ -580,6 +589,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   }
 
   .filters,
+  .vibe-row,
   .results {
     padding-left: 28px;
     padding-right: 28px;
@@ -616,8 +626,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     font-size: 1rem;
   }
 
-  .filter-group--vibe {
-    flex: 0 0 100%;
+  .vibe-row {
+    padding-left: 48px;
+    padding-right: 48px;
   }
 
   .results {
